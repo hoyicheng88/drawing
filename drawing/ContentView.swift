@@ -13,9 +13,7 @@ struct ContentView: View {
             ZStack (){
                 Image("Image")
                     .resizable()
-                    
                     .edgesIgnoringSafeArea(.all)
-                
                 NavigationLink(
                     destination: demoview()){
                     Text("齁搭啦！")
@@ -26,14 +24,10 @@ struct ContentView: View {
                 ZStack() {
                     glass_up()
                         .fill(Color.init(red: 153/255, green: 204/255, blue: 255/255))
-                    
                     glass_down()
-                        //.stroke()
                         .fill(Color.init(red: 153/255, green: 204/255, blue: 255/255))
-                    
                     wine()
                         .fill(Color.init(red: 153/255, green: 0, blue: 76/255))
-                    //.stroke()
                     dog()
                         .stroke()
                     Path { (path) in                        //nose
@@ -55,8 +49,8 @@ struct ContentView: View {
                     bell()
                         .fill(Color.yellow)
                     bell()
-                        .stroke()
-                }
+                        .stroke(style: StrokeStyle(lineWidth: 2.0, dash: [15,5]))
+                        }
                 .scaleEffect(0.85)
                 .position(x: 225, y: 375)
             }
@@ -122,8 +116,10 @@ struct dog: Shape{
             path.addQuadCurve(to:CGPoint(x: 344,y:490),control:CGPoint(x:322,y:510))
             path.addQuadCurve(to:CGPoint(x: 372,y:490),control:CGPoint(x:362,y:510))
             path.addQuadCurve(to:CGPoint(x: 376,y:493),control:CGPoint(x:380,y:498))
+            
             path.move(to:CGPoint(x: 372,y:490))
             path.addQuadCurve(to:CGPoint(x: 359,y:471),control:CGPoint(x:362,y:480))
+            
             path.move(to:CGPoint(x: 344,y:490))
             path.addQuadCurve(to:CGPoint(x: 336,y:468),control:CGPoint(x:335,y:480))
             
@@ -135,10 +131,10 @@ struct dog: Shape{
             path.addQuadCurve(to:CGPoint(x: 254,y:549),control:CGPoint(x:250,y:550))
             path.addQuadCurve(to:CGPoint(x: 240,y:546),control:CGPoint(x:245,y:550))
             
-            path.move(to:CGPoint(x:163,y:510))//
+            path.move(to:CGPoint(x:163,y:510))
             path.addQuadCurve(to:CGPoint(x: 172,y:520),control:CGPoint(x:165,y:514))
             
-            path.move(to:CGPoint(x:153,y:390))//
+            path.move(to:CGPoint(x:153,y:390))
             path.addQuadCurve(to:CGPoint(x: 175,y:338),control:CGPoint(x:165,y:350))
             
             path.move(to:CGPoint(x:20,y:333))//lefthand

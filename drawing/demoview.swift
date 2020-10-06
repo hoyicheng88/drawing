@@ -16,11 +16,6 @@ struct demoview: View {
                 .edgesIgnoringSafeArea(.all)
             
                 .navigationBarTitle(Text("我沒醉！我還要喝～"),   displayMode: .inline)
-            /*Text("我沒醉！我還要喝～")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .position(x: 200, y: 120)*/
-            
             Image("cross")
             .resizable()
                 .scaledToFit()
@@ -35,14 +30,12 @@ struct demoview: View {
                 
                 glass_up()
                     .fill(Color.init(red: 153/255, green: 204/255, blue: 255/255))
-                
                 glass_down()
-                    //.stroke()
                     .fill(Color.init(red: 153/255, green: 204/255, blue: 255/255))
                 
                 wine()
                     .fill(Color.init(red: 153/255, green: 0, blue: 76/255))
-                //.stroke()
+               
                 dog()
                     .stroke()
                 Path { (path) in                        //nose
@@ -61,12 +54,6 @@ struct demoview: View {
                     path.addQuadCurve(to:CGPoint(x: 157,y:132),control:CGPoint(x:204,y:130))
                     path.closeSubpath()
                 }.stroke()
-               /* Path{(path) in//eyeballs
-                    path.addArc(center: CGPoint(x: 220, y: 85), radius: 8, startAngle: .degrees(0), endAngle: .degrees(360), clockwise: false)
-                    path.addArc(center: CGPoint(x: 270, y: 86), radius: 8, startAngle: .degrees(0), endAngle: .degrees(360), clockwise: false)
-                    
-                }
-                .fill(Color.green)*/
                 belt()
                     .fill(Color.init(red: 1, green: 0, blue: 1))
                 belt()
@@ -74,15 +61,13 @@ struct demoview: View {
                 bell()
                     .fill(Color.yellow)
                 bell()
-                    .stroke()
+                    .stroke(style: StrokeStyle(lineWidth: 2.0, dash: [15,5]))
             }
             .scaleEffect(0.85)
             .position(x: 225, y: 450)
         }
     }
 }
-
-
 
 struct demoview_Previews: PreviewProvider {
     static var previews: some View {
